@@ -1,0 +1,88 @@
+body {
+  margin: 15;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;   /* ← これが重要！ */
+  justify-content: center;
+  align-items: center;
+  background: #ffb6c1;
+  font-family: 'Yusei Magic', sans-serif;
+}
+
+.img-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.img-btn img {
+  width: 300px;
+  display: block;
+  border-radius: 18px;
+  box-shadow: 0 10px 10px rgba(200,0,0,0.3);
+  transition:
+    transform 0.12s cubic-bezier(.2,.1,.4,1),
+    box-shadow 0.1s ease,
+    filter 0.12s ease;
+}
+
+/* ← こっちを使う */
+.img-btn.pressed img {
+  transform: translateY(10px) scale(0.94);
+  box-shadow:
+    0 6px 18px rgba(255, 80, 120, 0.6),
+    0 0 30px rgba(255, 80, 120, 0.8);
+}
+
+#result {
+  margin-top: 40px;
+  font-size: clamp(10px, 12vw, 24px);
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 0.05em;
+  max-width: 90%;
+  word-break: break-word;
+  line-height: 1.2;
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+#result img {
+  width: 300px;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.result-text {
+  white-space: pre-line; /* ← 改行を有効にする */
+}
+
+.result-text a {
+  color: blue;
+  font-size: 0.6em;
+  text-decoration: underline;
+}
+
+#result {
+  font-family: 'Zen Maru Gothic', serif;
+}
+
+.container {
+  min-height: 100vh;
+  width: 100%;
+  max-width: 400px;  
+  margin: 60px auto;
+  text-align: center;
+  padding: 0 20px;
+}
